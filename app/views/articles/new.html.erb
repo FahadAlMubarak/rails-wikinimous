@@ -1,0 +1,21 @@
+<%# <h1>Write a new article</h1>
+<%= form_with model: @article do |f| %>
+  <%# <%= f.label :title %>
+  <%# <%= f.text_field :title %>
+  <%# <%= f.label :content %>
+  <%# <%= f.text_field :content %>
+  <%# <%= f.submit %>
+<%# <% end %>
+
+<h1 class="wiki-title text-center mb-4">Write a new article</h1>
+<%= form_with model: @article, local: true, html: { class: 'needs-validation' } do |f| %>
+  <div class="mb-3">
+    <%= f.label :title, class: "form-label" %>
+    <%= f.text_field :title, class: "form-control" %>
+  </div>
+  <div class="mb-3">
+    <%= f.label :content, class: "form-label" %>
+    <%= f.text_field :content, class: "form-control" %>
+  </div>
+  <%= f.submit "Create Article", class: "btn btn-custom" %>
+<% end %>

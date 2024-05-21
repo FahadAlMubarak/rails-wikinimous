@@ -1,0 +1,21 @@
+<%# <h1>WIKI</h1>
+<ul>
+<% @articles.each do |article| %>
+<%# <li> <%= link_to article.title, article_path(article) </li> %>
+<%# <% end %>
+<%# </ul> %>
+
+<%# <%= link_to "New Article", new_article_path  %>
+
+<h1 class="wiki-title text-center mb-4">WIKI</h1>
+<ul class="list-group mb-4">
+  <% @articles.each do |article| %>
+    <li class="list-group-item text-center">
+      <%= link_to article.title, article_path(article), class: "text-decoration-none text-primary" %>
+    </li>
+  <% end %>
+</ul>
+<div class="text-center">
+  <%= link_to "New Article", new_article_path, class: "btn btn-custom" %>
+</div>
+
